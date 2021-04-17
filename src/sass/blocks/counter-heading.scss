@@ -1,0 +1,34 @@
+.counter-heading {
+  counter-reset: rows;
+}
+
+.counter-heading__increment {
+  counter-increment: rows;
+}
+
+.counter-heading__value {
+  position: relative;
+  padding-left: 32px;
+
+  &::before {
+    content: counter(rows);
+
+    position: absolute;
+    top: calc(50% - 12px);
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+
+    background-color: $color-counter;
+
+    border-radius: 50%;
+  }
+}

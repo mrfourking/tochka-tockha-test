@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru-Ru">
+
+<head>
+  <title>FTL: Прямая машина</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="FTL: Прямая машина">
+<link href="./css/main.css" rel="stylesheet"></head>
+
+<body>
+  <div class="wrapper">
+    <main class="logistic-request container">
+      <h1 class="heading heading--h1 logistic-request__heading">
+        FTL: Прямая машина
+      </h1>
+      <section class="request-form logistic-request__form counter-heading">
+        <h2 class="visually-hidden">Форма заявки на перевозку</h2>
+        <form action="#" method="POST">
+          <div class="request-form__row counter-heading__increment">
+            <h3 class="request-form__row-heading counter-heading__value">
+              Маршрут
+            </h3>
+            <div class="request-form__item">
+              <div class="custom-input">
+                <label for="start">Откуда</label>
+                <input type="text" id="start" name="start">
+              </div>
+            </div>
+            <div class="request-form__item">
+              <div class="custom-input">
+                <label for="finish">Куда</label>
+                <input type="text" id="finish" name="finish">
+              </div>
+            </div>
+          </div>
+          <div class="request-form__row request-form__row--half request-form__row--col2 counter-heading__increment">
+            <h3 class="request-form__row-heading counter-heading__value">
+              Транспорт
+            </h3>
+
+            <div class="request-form__item">
+              <div class="custom-select">
+                <div class="custom-select__wrapper">
+                  <label for="load-capacity">Грузоподъёмность</label>
+                  <input type="text" name="load-capacity" id="load-capacity" readonly placeholder="Не выбрана">
+                  <svg class="custom-select__icon" width="24" height="24">
+                    <use xlink:href="#icon-dropdown"></use>
+                  </svg>
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 1">Вариант 1</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 2">Вариант 2</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 3">Вариант 3</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 4">Вариант 4</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 5">Вариант 5</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="request-form__item">
+              <div class="custom-select">
+                <div class="custom-select__wrapper">
+                  <label for="loading-method">Способ погрузки</label>
+                  <input type="text" name="loading-method" id="loading-method" value="Задняя" readonly
+                    placeholder="Не выбрана">
+                  <svg class="custom-select__icon" width="24" height="24">
+                    <use xlink:href="#icon-dropdown"></use>
+                  </svg>
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option selected">
+                    <a href="#" data-value="Задняя">Задняя</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 2">Вариант 2</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 3">Вариант 3</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 4">Вариант 4</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 5">Вариант 5</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="request-form__row request-form__row--half request-form__row--col2 counter-heading__increment">
+            <h3 class="request-form__row-heading counter-heading__value">
+              Груз
+            </h3>
+            <div class="request-form__item request-form__item--full">
+              <div class="custom-select">
+                <div class="custom-select__wrapper">
+                  <label for="cargo-type">Тип груза</label>
+                  <input type="text" name="cargo-type" id="cargo-type" readonly placeholder="Не выбрана">
+                  <svg class="custom-select__icon" width="24" height="24">
+                    <use xlink:href="#icon-dropdown"></use>
+                  </svg>
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 1">Вариант 1</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 2">Вариант 2</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 3">Вариант 3</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 4">Вариант 4</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 5">Вариант 5</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="request-form__item">
+              <div class="custom-select">
+                <div class="custom-select__wrapper">
+                  <label for="danger-class">Класс опасности</label>
+                  <input type="text" name="danger-class" id="danger-class"
+                    value="Класс 5 — Окисляющие вещества и органические перекиси" readonly placeholder="Не выбрана">
+                  <svg class="custom-select__icon" width="24" height="24">
+                    <use xlink:href="#icon-dropdown"></use>
+                  </svg>
+                </div>
+                <ul class="custom-select__options">
+                  <li class="custom-select__option selected">
+                    <a href="#" data-value="Класс 5 — Окисляющие вещества и органические перекиси">Класс 5 — Окисляющие вещества и органические перекиси</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 2">Вариант 2</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 3">Вариант 3</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 4">Вариант 4</a>
+                  </li>
+                  <li class="custom-select__option">
+                    <a href="#" data-value="Вариант 5">Вариант 5</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="request-form__item">
+              <div class="custom-input">
+                <label for="declared-value">Объявленная ценность, ₽</label>
+                <input type="text" id="declared-value" name="declared-value" placeholder="≥ 1">
+              </div>
+            </div>
+          </div>
+          <div class="request-form__row counter-heading__increment">
+            <h3 class="request-form__row-heading counter-heading__value">
+              Время
+            </h3>
+          </div>
+        </form>
+      </section>
+      <div class="logistic-request__hint hint">
+        <p class="hint__message">
+          Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия.
+        </p>
+      </div>
+    </main>
+  </div>
+<script type="text/javascript" src="./js/bundle.js"></script></body>
+
+</html>

@@ -1,0 +1,19 @@
+.logistic-request {
+  display: grid;
+  grid-template-columns: 2.05fr 1fr 1.3fr;
+  column-gap: 16px;
+  padding-top: 40px;
+}
+
+.logistic-request__heading {
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+}
+
+.logistic-request__form {
+  grid-column: span 1;
+}
+
+.logistic-request__hint {
+  grid-column: span 1;
+}

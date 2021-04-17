@@ -1,0 +1,159 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// Desktop first
+
+@mixin viewport--xl {
+  @media (max-width: $viewport--xxl - 1) {
+    @content;
+  }
+}
+
+@mixin container {
+  @media (max-width: $container - 1) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: $viewport--xl - 1) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $viewport--lg) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $viewport--md - 1) {
+    @content;
+  }
+}
+
+@mixin mobile-sm {
+  @media (max-width: $viewport--sm - 1) {
+    @content;
+  }
+}
+
+// Mobile first
+
+@mixin min-tablet {
+  @media (min-width: $viewport--md) {
+    @content;
+  }
+}
+
+@mixin min-desktop {
+  @media (min-width: $viewport--lg + 1) {
+    @content;
+  }
+}
+
+
+@mixin tablet-only {
+  @media (min-width: $viewport--md) and (max-width: $viewport--lg) {
+    @content;
+  }
+}
+
+/*
+@mixin min-desktop {
+  @media (min-width: $viewport--xl) {
+    @content;
+  }
+}
+
+@mixin min-viewport--xxl {
+  @media (min-width: $viewport--xxl) {
+    @content;
+  }
+}
+ */
+
+@mixin hover {
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover:not(:disabled),
+    &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin first-letter-caps {
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+
+@mixin reset-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset-btn {
+  cursor: pointer;
+  padding: 0;
+  background-color: $color-transparent;
+  border: none;
+  outline: none;
+}
+
+@mixin hidden-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    @content;
+  }
+
+  &::-moz-placeholder { /* Firefox 19+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder { /* IE 10+ */
+    @content;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    @content;
+  }
+}
+
+@mixin default-hover {
+  transition: opacity $default-transition-settings;
+
+  @include hover {
+    opacity: 0.7;
+  }
+}
+
+@mixin light-hover {
+  transition: opacity $default-transition-settings;
+
+  @include hover {
+    opacity: 0.5;
+  }
+}
+
+@mixin edge { // Edge before Chromium
+  @supports (-ms-ime-align:auto) {
+    @content;
+  }
+}

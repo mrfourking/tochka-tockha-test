@@ -1,0 +1,37 @@
+// Colors
+//---------------------------------
+
+// Default
+
+$color-default-black:          #000000;
+$color-default-white:          #ffffff;
+$color-transparent:            rgba(255, 255, 255, 0);
+
+// Base
+
+$color-bg:                     #343539;
+$color-hint-bg:                #4B4B4F;
+$color-counter:                #EF483E;
+$color-placeholder:            #CFCFCF;
+
+// Gradient
+$transparent-to-white: linear-gradient(270deg, #ffffff 25%, rgba(0, 0, 0, 0) 45%);
+
+// Typography
+//---------------------------------
+
+$font-family--primary:  "HelveticaNeueCyr", "Arial", sans-serif;
+
+// Animation
+//---------------------------------
+
+$default-transition-settings:  0.3s ease;
+
+// Viewports
+//---------------------------------
+
+$viewport--sm:                 320px;
+$viewport--md:                 768px;
+$viewport--lg:                 1024px;
+$viewport--xl:                 1440px;
+$viewport--xxl:                1920px;

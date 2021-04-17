@@ -1,0 +1,28 @@
+.custom-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+
+  label {
+    margin-bottom: 8px;
+
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  input {
+    width: 100%;
+    padding: 13px 14px;
+
+    font-size: 15px;
+    line-height: 18px;
+    color: $color-default-black;
+
+    &::placeholder {
+      font-size: 15px;
+      line-height: 18px;
+      color: $color-placeholder;
+    }
+  }
+}
