@@ -7,9 +7,7 @@
   "scripts": {
     "stylelint": "stylelint \"src/sass/**/*.scss\" --syntax scss",
     "test": "npm run stylelint & eslint src/js/",
-    "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
     "start": "webpack-dev-server --mode development --open"
   },
   "repository": {

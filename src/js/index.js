@@ -1,7 +1,7 @@
 import {initSelect} from './initSelect';
 import {uploadSvgFiles} from './svgUpload';
 import {initAutoresizeTextarea} from './textareaAutoresize';
-import {toggleHiddenItems} from './toggleHiddenformItems';
+import {toggleHiddenItems} from './toggleHiddenFormItems';
 
 uploadSvgFiles();
 initSelect();
