@@ -102,7 +102,7 @@
             <h3 class="request-form__row-heading counter-heading__value">
               Груз
             </h3>
-            <div class="request-form__item request-form__item--full">
+            <div class="request-form__item request-form__item--full request-form__item--span1-sm">
               <div class="custom-select">
                 <div class="custom-select__wrapper">
                   <label for="cargo-type">Тип груза</label>
@@ -130,7 +130,7 @@
                 </ul>
               </div>
             </div>
-            <div class="request-form__item">
+            <div class="request-form__item request-form__item--hidden-sm">
               <div class="custom-select">
                 <div class="custom-select__wrapper">
                   <label for="danger-class">Класс опасности</label>
@@ -142,7 +142,8 @@
                 </div>
                 <ul class="custom-select__options">
                   <li class="custom-select__option selected">
-                    <a href="#" data-value="Класс 5 — Окисляющие вещества и органические перекиси">Класс 5 — Окисляющие вещества и органические перекиси</a>
+                    <a href="#" data-value="Класс 5 — Окисляющие вещества и органические перекиси">Класс 5 — Окисляющие
+                      вещества и органические перекиси</a>
                   </li>
                   <li class="custom-select__option">
                     <a href="#" data-value="Вариант 2">Вариант 2</a>
@@ -165,17 +166,68 @@
                 <input type="text" id="declared-value" name="declared-value" placeholder="≥ 1">
               </div>
             </div>
+            <div class="request-form__item request-form__item--full">
+              <div class="custom-input custom-input--checkbox js-visibility-toggle">
+                <input type="checkbox" id="temp-range" name="temp-range">
+                <label for="temp-range">Требуется температурный режим</label>
+              </div>
+            </div>
+            <div class="request-form__item js-hidden-block">
+              <div class="custom-input">
+                <label for="min-temp">От, °C</label>
+                <input type="text" id="min-temp" name="min-temp" value="-20">
+              </div>
+            </div>
+            <div class="request-form__item js-hidden-block">
+              <div class="custom-input">
+                <label for="max-temp">До, °C</label>
+                <input type="text" id="max-temp" name="max-temp" value="+23">
+              </div>
+            </div>
           </div>
           <div class="request-form__row counter-heading__increment">
             <h3 class="request-form__row-heading counter-heading__value">
               Время
             </h3>
+            <div class="request-form__item">
+              <div class="route">
+                <p class="route__intro">
+                  <span>Когда прибыть на точку</span>
+                  <span>700 км в день</span>
+                </p>
+                <div class="route__address route__address--start">
+                  <svg class="route__icon" width="24" height="24">
+                    <use xlink:href="#icon-round"></use>
+                  </svg>
+                  <input type="text" id="start-point" name="start-point" value="Адрес не указан" readonly>
+                  <button class="route__btn" type="button">
+                    НЕ ВЫБРАНО
+                  </button>
+                </div>
+                <div class="route__address route__address--finish">
+                  <svg class="route__icon" width="24" height="24">
+                    <use xlink:href="#icon-round"></use>
+                  </svg>
+                  <input type="text" id="finish-point" name="finish-point" value="Адрес не указан" readonly>
+                  <button class="route__btn route__btn--disabled" type="button" disabled>
+                    НЕ ВЫБРАНО
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="request-form__item">
+              <div class="custom-input custom-input--textarea js-autoresize-textarea">
+                <label for="comment">Комментарий к заказу</label>
+                <textarea type="text" id="comment" name="comment"
+                  placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"></textarea>
+              </div>
+            </div>
           </div>
         </form>
       </section>
       <div class="logistic-request__hint hint">
         <p class="hint__message">
-          Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия.
+          Для расчета стоимости необходимо ввести параметры груза, пункты отправки и&nbsp;прибытия.
         </p>
       </div>
     </main>

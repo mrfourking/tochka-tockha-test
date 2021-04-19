@@ -16,6 +16,18 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 12px;
   }
+
+  // @include container {
+  //   &--half {
+  //     max-width: calc(50% - 8px);
+  //   }
+  // }
+
+  // @include tablet {
+  //   &--half {
+  //     max-width: 356px;
+  //   }
+  // }
 }
 
 .request-form__row-heading {
@@ -25,11 +37,28 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
+
+  @include mobile {
+
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
 
 .request-form__item {
   grid-column: span 1;
+
   &--full {
     grid-column: 1 / -1;
+  }
+
+  @include mobile {
+    &--span1-sm {
+      grid-column: span 1;
+    }
+
+    &--hidden-sm {
+      display: none;
+    }
   }
 }

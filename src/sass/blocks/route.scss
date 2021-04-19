@@ -1,0 +1,80 @@
+.route {
+  display: flex;
+  flex-direction: column;
+}
+
+.route__intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.route__address {
+  position: relative;
+
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding: 13px 140px 12px 36px;
+
+    font-size: 15px;
+    line-height: 19px;
+    color: $color-placeholder;
+
+    background-color: $color-hint-bg;
+  }
+
+  &+& {
+    margin-top: 4px;
+  }
+
+  &--start {
+    .route__icon {
+      fill: $color-counter;
+    }
+  }
+}
+
+.route__icon {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+
+  fill: $color-default-white;
+}
+
+.route__btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  padding: 4px 14px 4px 13px;
+
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-default-white;
+
+  background-color: $color-btn-bg;
+
+  border: none;
+  border-radius: 2px;
+
+  cursor: pointer;
+
+  outline: none;
+
+  @include default-hover;
+
+  &:disabled {
+    pointer-events: none;
+
+    opacity: 0.3;
+  }
+}

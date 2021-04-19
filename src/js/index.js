@@ -1,7 +1,9 @@
-// index.js
-
-import iconDropdown from '../img/sprite/icon-dropdown.svg';
-import iconTick from "../img/sprite/icon-tick.svg";
 import {initSelect} from './initSelect';
+import {uploadSvgFiles} from './svgUpload';
+import {initAutoresizeTextarea} from './textareaAutoresize';
+import {toggleHiddenItems} from './toggleHiddenformItems';
 
+uploadSvgFiles();
 initSelect();
+toggleHiddenItems();
+initAutoresizeTextarea();

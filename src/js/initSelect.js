@@ -6,6 +6,10 @@ const initSelect = () => {
   const selectWrappers = [];
   const valueFields = [];
 
+  /**
+   * Открытие выпадающего окна у селекта
+   * @param {HTMLElement} select - DOM элемент селекта
+   */
   const openSelect = (select) => {
     if (!select.classList.contains('active')) {
       const selectItems = select.querySelectorAll('.custom-select__option a');
@@ -18,6 +22,10 @@ const initSelect = () => {
     }
   };
 
+  /**
+   * Закрытие выпадающего окна у селекта
+   * @param {HTMLElement} select - DOM элемент селекта
+   */
   const closeSelect = (select) => {
     const selectItems = select.querySelectorAll('.custom-select__option a');
     select.classList.remove('active');
@@ -28,6 +36,10 @@ const initSelect = () => {
     })
   };
 
+  /**
+   * Обработчик нажатия на экран с проверкой объекта нажатия на соответствие селекту
+   * @param {HTMLElement} select - DOM элемент селекта
+   */
   const onMissClickClose = (select) => {
     return (evt) => {
       if (!(select.contains(evt.target))) {
@@ -36,7 +48,11 @@ const initSelect = () => {
     }
   }
 
-  function onItemClickSelectValue() {
+  /**
+   * Функция выбора элемента выпадающего списка селекта
+   */
+  function onItemClickSelectValue(evt) {
+    evt.preventDefault();
     this.closest('.custom-select').querySelector('.custom-select input').value = this.dataset.value;
     this.closest('.custom-select').querySelectorAll('.custom-select__option').forEach((item) => {
       if (item.contains(this)) {
@@ -60,6 +76,4 @@ const initSelect = () => {
   })
 };
 
-export {
-  initSelect
-};
+export {initSelect};

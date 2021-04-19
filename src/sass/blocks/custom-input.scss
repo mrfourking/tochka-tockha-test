@@ -9,19 +9,142 @@
 
     font-size: 13px;
     line-height: 16px;
+
+    @include mobile-sm {
+      width: 100%;
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   input {
     width: 100%;
-    padding: 13px 14px;
+    padding: 11px 12px;
 
     font-size: 15px;
     line-height: 18px;
     color: $color-default-black;
 
+    border: 2px solid $color-transparent;
+
+    transition: border-color $default-transition-settings;
+
     &::placeholder {
       font-size: 15px;
       line-height: 18px;
+      color: $color-placeholder;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $color-counter;
+    }
+  }
+
+  &--checkbox {
+    input {
+      position: absolute;
+
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+
+      clip: rect(0 0 0 0);
+    }
+
+    label {
+      position: relative;
+
+      margin-bottom: 0;
+      padding-left: 36px;
+
+      font-size: 13px;
+      line-height: 24px;
+
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 24px;
+        height: 24px;
+
+        background-color: $color-transparent;
+
+        border: 2px solid $color-default-white;
+
+        transition: background-color $default-transition-settings,
+          border-color $default-transition-settings;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 24px;
+        height: 24px;
+
+        background-image: url('../img/sprite/icon-tick.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+
+        visibility: hidden;
+        opacity: 0;
+
+        transition: visibility $default-transition-settings,
+          opacity $default-transition-settings;
+      }
+    }
+
+    input:checked+label::before {
+      background-color: $color-counter;
+
+      border-color: $color-counter;
+    }
+
+    input:checked:hover+label::before,
+    input:checked:focus+label::before {
+      border-color: $color-default-white;
+    }
+
+    input:checked+label::after {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &--textarea {
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      padding: 11px 12px;
+
+      font-size: 15px;
+      line-height: 18px;
+
+      outline: none;
+
+      border: 2px solid $color-transparent;
+
+      transition: border-color $default-transition-settings;
+
+      &:hover,
+      &:focus {
+        border-color: $color-counter;
+      }
+    }
+
+    textarea::placeholder {
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: 400;
       color: $color-placeholder;
     }
   }
