@@ -12,7 +12,7 @@
 ``` sh
 $ git clone git@github.com:mrfourking/tochka-tockha-test.git project-name
 $ cd project-name
-$ npm install
+$ npm i
 ```
 
 По окончанию выполнения будут установлены все необходимые пакеты.
